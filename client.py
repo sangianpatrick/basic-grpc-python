@@ -1,5 +1,5 @@
 import grpc
-
+import json
 # import grpc generated classes
 import user_pb2
 import user_pb2_grpc
@@ -13,10 +13,17 @@ stub = user_pb2_grpc.UserServiceStub(channel)
 params = user_pb2.RequestParams(user_list=True)
 
 response = stub.GetUserList(params)
+data = []
+for x in response.users:
+  data.append(
+    {
+      "first_name":x.first_name,
+      "last_name":x.last_name,
+      "email":x.email,
+      "age": x.age
+    }
+  )
 
-print( len(response.users))
-
-# print(response)
-
+print(json.dumps(data))
 
 

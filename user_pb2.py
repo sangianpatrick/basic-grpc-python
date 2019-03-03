@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   package='',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=_b('\n\nuser.proto\"\"\n\rRequestParams\x12\x11\n\tuser_list\x18\x01 \x01(\x08\"I\n\x04User\x12\x12\n\nfirst_name\x18\x01 \x01(\t\x12\x11\n\tlast_name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\x0b\n\x03\x61ge\x18\x04 \x01(\x05\" \n\x08UserList\x12\x14\n\x05users\x18\x01 \x03(\x0b\x32\x05.User29\n\x0bUserService\x12*\n\x0bGetUserList\x12\x0e.RequestParams\x1a\t.UserList\"\x00\x62\x06proto3')
+  serialized_pb=_b('\n\nuser.proto\"\"\n\rRequestParams\x12\x11\n\tuser_list\x18\x01 \x01(\x08\"\x07\n\x05\x45mpty\"I\n\x04User\x12\x12\n\nfirst_name\x18\x01 \x01(\t\x12\x11\n\tlast_name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\x0b\n\x03\x61ge\x18\x04 \x01(\x05\" \n\x08UserList\x12\x14\n\x05users\x18\x01 \x03(\x0b\x32\x05.User29\n\x0bUserService\x12*\n\x0bGetUserList\x12\x0e.RequestParams\x1a\t.UserList\"\x00\x62\x06proto3')
 )
 
 
@@ -53,6 +53,30 @@ _REQUESTPARAMS = _descriptor.Descriptor(
   ],
   serialized_start=14,
   serialized_end=48,
+)
+
+
+_EMPTY = _descriptor.Descriptor(
+  name='Empty',
+  full_name='Empty',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=50,
+  serialized_end=57,
 )
 
 
@@ -103,8 +127,8 @@ _USER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=50,
-  serialized_end=123,
+  serialized_start=59,
+  serialized_end=132,
 )
 
 
@@ -134,12 +158,13 @@ _USERLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=125,
-  serialized_end=157,
+  serialized_start=134,
+  serialized_end=166,
 )
 
 _USERLIST.fields_by_name['users'].message_type = _USER
 DESCRIPTOR.message_types_by_name['RequestParams'] = _REQUESTPARAMS
+DESCRIPTOR.message_types_by_name['Empty'] = _EMPTY
 DESCRIPTOR.message_types_by_name['User'] = _USER
 DESCRIPTOR.message_types_by_name['UserList'] = _USERLIST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -150,6 +175,13 @@ RequestParams = _reflection.GeneratedProtocolMessageType('RequestParams', (_mess
   # @@protoc_insertion_point(class_scope:RequestParams)
   ))
 _sym_db.RegisterMessage(RequestParams)
+
+Empty = _reflection.GeneratedProtocolMessageType('Empty', (_message.Message,), dict(
+  DESCRIPTOR = _EMPTY,
+  __module__ = 'user_pb2'
+  # @@protoc_insertion_point(class_scope:Empty)
+  ))
+_sym_db.RegisterMessage(Empty)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), dict(
   DESCRIPTOR = _USER,
@@ -173,8 +205,8 @@ _USERSERVICE = _descriptor.ServiceDescriptor(
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=159,
-  serialized_end=216,
+  serialized_start=168,
+  serialized_end=225,
   methods=[
   _descriptor.MethodDescriptor(
     name='GetUserList',

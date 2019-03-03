@@ -4,6 +4,8 @@ message RequestParams {
 	bool user_list = 1;
 }
 
+message Empty {}
+
 message User {
 	string first_name = 1;
 	string last_name = 2;
